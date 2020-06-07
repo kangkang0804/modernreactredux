@@ -9,6 +9,7 @@ import {
   STREAM_DELETE,
   STREAM_GET
 } from './types'
+import history from '../history'
 
 export const signIn = userId => {
   return {
@@ -32,6 +33,8 @@ export const streamCreate = formValues => {
       type: STREAM_CREATE,
       payload: response.data
     })
+    // programmatic navigation to get the user back to the root route
+    history.push('/')
   }
 }
 
@@ -54,12 +57,14 @@ export const streamGet = streamId => async dispatch => {
 }
 
 export const streamEdit = (streamId, formValues) => async dispatch => {
-  const response = await streams.put(`/streams/${streamId}`, formValues)
+  const response = await streams.patch(`/streams/${streamId}`, formValues)
 
   dispatch({
     type: STREAM_EDIT,
     payload: response.data
   })
+
+  history.push('/')
 }
 
 export const streamDelete = streamId => async dispatch => {
