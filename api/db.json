@@ -15,6 +15,12 @@
       "description": "description3",
       "userId": "107238704784028778395",
       "id": 3
+    },
+    {
+      "title": "New Stream :)",
+      "description": "This stream was created after making the Modal component",
+      "userId": "107238704784028778395",
+      "id": 4
     }
   ]
 }
