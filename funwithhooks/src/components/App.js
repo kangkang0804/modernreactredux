@@ -1,9 +1,17 @@
 import React from 'react'
+import ResourceList from './ResourceList'
+import { ResourceStore } from '../contexts/ResourceSelector'
+import ResourceSelector from './ResourceSelector'
 
-class App extends React.Component {
-  render () {
-    return <div className='ui container'> hey, this is my new app</div>
-  }
+const App = props => {
+  return (
+    <ResourceStore>
+      <div className='ui container'>
+        <ResourceSelector />
+        <ResourceList />
+      </div>
+    </ResourceStore>
+  )
 }
 
 export default App
