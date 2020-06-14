@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ResourceContext = React.createContext('posts')
+const ResourceContext = React.createContext('posts') 
 
 export class ResourceStore extends React.Component {
   state = { resource: 'posts' }
